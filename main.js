@@ -67,7 +67,7 @@ function GameLoop(){
 }
 
 function enemyOffScreen(enemy){
-    return enemy.x + enemy.width <= 0 || enemy.x + enemy.width >= window.innerWidth + 100;
+    return enemy.x + enemy.width <= 0 || enemy.x + enemy.width >= window.innerWidth + 500;
 }
 
 function isOffScreen(star){
