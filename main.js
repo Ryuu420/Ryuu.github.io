@@ -44,6 +44,10 @@ function GameLoop(){
     });
 
     enemies.forEach((enemy) => {
+        if (enemyOffScreen(enemy)){
+            const index = enemies.indexOf(enemy);
+            enemies.splice(index, 1);
+        }
         if (bulletController.collideWith(enemy)) {
             if (enemy.health <= 0) {
                 const index = enemies.indexOf(enemy);
@@ -60,6 +64,10 @@ function GameLoop(){
         player.draw(ctx);
     }
 
+}
+
+function enemyOffScreen(enemy){
+    return enemy.x + enemy.width <= 0 || enemy.x + enemy.width >= window.innerWidth;
 }
 
 function isOffScreen(star){
