@@ -73,11 +73,15 @@ function setCommonStyle(){
     ctx.lineWidth = 5;
 }
 function spawnNewEnemyLeft(){
-    enemies.push(new Enemy(0, Math.floor(Math.random() * canvas.height / 3) + 50, "black", 10, Math.floor(Math.random() * 5) + 1));
+    if (enemies.length < 10){
+        enemies.push(new Enemy(0, Math.floor(Math.random() * canvas.height / 3) + 50, "black", 10, Math.floor(Math.random() * 5) + 1));
+    }
 }
 
 function spawnNewEnemyRight(){
-    enemies.push(new Enemy(canvas.width, Math.floor(Math.random() * canvas.height / 3) + 50, "black", 10, -Math.floor(Math.random() * 5) + -1));
+    if (enemies.length < 10){
+        enemies.push(new Enemy(canvas.width, Math.floor(Math.random() * canvas.height / 3) + 50, "black", 10, -Math.floor(Math.random() * 5) + -1));
+    }
 }
 
 function spawnStars(){
